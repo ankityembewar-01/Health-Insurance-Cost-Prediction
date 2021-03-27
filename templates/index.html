@@ -1,0 +1,90 @@
+<!--HTML FOR FRONT END -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Cost Prediction</title>
+    <link href='../static/index.css' rel="stylesheet" type="text/css"> <!--link to css file-->
+    
+</head>
+<div class="bg-image"></div>
+<body>
+    <div class="bg-text">
+        <br>
+        <img src="../static/doctor-gif.gif"  width=320 height=700 style="float:right" /> <!--calling images from static folder-->
+        <center>
+        <h1 class='Heading'><b>Insurance Cost Prediction</b></h1>
+        <h3 class='Heading1'>Smoking is injurious to health</h3>
+        </center>
+
+        <center>
+        <br>
+        <form action = "http://localhost:5000/predict" method = "POST"> <!--form url for prediction-->
+        
+        <!--Creating form for model input-->
+        <label for="age" class="title"><b>Age :</b></label>
+        <input class="title" placeholder="age" name="age" id="age"  type = number required><br><br>
+        
+        <label for="gender" class="title"><b>Gender :</b></label>
+        <select  class="title" id="gender" name="gender" id="gender" style=" height:28px;width:180px;" required >
+            <option value="">Select Gender</option>
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+        </select><br><br>
+
+        <label for="bmi" class="title"><b>BMI : </b></label>
+        <input class="title" id="bmi" name="bmi" placeholder="bmi" type = number required><br><br>
+
+        <label for="children" class="title"><b>Children : </b></label>
+        <select  class="title" id="children" name="children" id="children" style=" height:28px;width:180px;" required >
+            <option value="">Number of children</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select><br><br>
+
+        <label for="smoker" class="title"><b>Smoker : </b></label>
+        <select  class="title" id="smoker" name="smoker" id="smoker" style=" height:28px;width:180px;" required >
+            <option value="">Select Smoker</option>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <label for="region" class="title"><b>Region : </b></label>
+        <select  class="title" id="region" name="region" id="region" style=" height:28px;width:180px;" required >
+            <option value="">Select Region</option>
+            <option value="0">Northeast</option>
+            <option value="1">Northwest</option>
+            <option value="2">Southeast</option>
+            <option value="3">Southwest</option>
+        </select><br><br>
+        
+
+        <br><br>
+        <center>
+        <button type="submit" class="button">Predict Insurance Price</button> <!--Submit button-->
+        <br><br>
+
+        <br>
+        {{pred}} <!--declaring variable-->
+        <br>
+
+        </form>
+        </center>
+        
+        
+        
+        </div>
+        <br><br><br>
+        </center>
+
+    </div>
+    <br><br>
+   
+
+</body>
+</html>
